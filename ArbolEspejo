@@ -4,7 +4,9 @@ public class ArbolEspejo {
     public ArbolEspejo (){
         raiz=null;
     }
-    //metodo para insertar un Nodo en el arbol
+    
+//metodo para insertar un Nodo en el arbol
+    
     public void agregarNodo(int d){
         NodoArbol2 nuevo= new NodoArbol2(d);
         
@@ -17,16 +19,16 @@ public class ArbolEspejo {
             while(true){
                 padre=auxiliar;
                 if(d< auxiliar.dato){
-                    auxiliar= auxiliar.hijoIzquierdo;
+                    auxiliar= auxiliar.hijoDerecho;
                     if(auxiliar== null){
-                        padre.hijoIzquierdo= nuevo;
+                        padre.hijoDerecho= nuevo;
                         return;
                     }
                 }
                 else {
-                    auxiliar=auxiliar.hijoDerecho;
+                    auxiliar=auxiliar.hijoIzquierdo;
                     if (auxiliar== null){
-                        padre.hijoDerecho=nuevo;
+                        padre.hijoIzquierdo=nuevo;
                         return;
                     }
                 }
@@ -38,7 +40,7 @@ public class ArbolEspejo {
         return raiz==null;
     }
     //metodo para recorrer el Arbol inOrden
-    public void inOrden(NodoArbol r){
+    public void inOrden(NodoArbol2 r){
         if (r!= null){
             inOrden(r.hijoIzquierdo);
             System.out.print(r.dato + ",");
@@ -46,7 +48,7 @@ public class ArbolEspejo {
         }
     }
     //Metodo para recorrer el Arbol en preorden
-    public void preOrden(NodoArbol r){
+    public void preOrden(NodoArbol2 r){
         if (r!= null){
             System.out.print(r.dato + ",");
             preOrden(r.hijoIzquierdo);
@@ -54,7 +56,7 @@ public class ArbolEspejo {
         }
     }
     //metodo para recorrer el Arbol postOrden
-     public void postOrden(NodoArbol r){
+     public void postOrden(NodoArbol2 r){
         if (r!= null){
             postOrden(r.hijoIzquierdo);
             postOrden(r.hijoDerecho); 
@@ -164,16 +166,6 @@ public class ArbolEspejo {
          return reemplazo;
      }
 
-    void inOrden(NodoArbol2 raiz) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    void preOrden(NodoArbol2 raiz) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    void postOrden(NodoArbol2 raiz) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 }
      
